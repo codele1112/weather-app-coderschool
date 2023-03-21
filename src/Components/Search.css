@@ -1,6 +1,6 @@
 input {
   width: 30%;
-  height: 30px;
+  height: 2rem;
   background-color: transparent;
   border: transparent;
   border-bottom: 1px solid #000;
@@ -10,4 +10,12 @@ input {
 .container {
   max-width: 1080px;
   margin: 20px auto;
+}
+
+.search-btn {
+  font-size: 1rem;
+  width: 4rem;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0.5rem;
 }

@@ -9,19 +9,18 @@ const api = {
 function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [searchCity, setSearchCity] = useState("hanoi");
-  const [weatherInfo, setWeatherInfo] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [weatherInfo, setWeatherInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       if (!searchCity) return;
-      setLoading(true);
-      //
       try {
         const url = `${api.base}weather?q=${searchCity}&unit=metric&APPID=${api.key}`;
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
 
         if (response.ok) {
           setWeatherInfo(data);
@@ -50,7 +49,7 @@ function Search() {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button>Search</button>
+        <button className="search-btn">Search</button>
       </form>
       <div className="container">
         {loading ? (
