@@ -8,7 +8,7 @@ const api = {
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
-  const [searchCity, setSearchCity] = useState("hanoi");
+  const [searchCity, setSearchCity] = useState("sydney");
   const [weatherInfo, setWeatherInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
